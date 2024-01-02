@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+@font-face {
+    font-family: 'YourFont-Bold';
+    src: url('../assets/GlacialIndifference_1312/OTF/GlacialIndifference-Bold.otf') format('opentype'),
+        url('../assets/GlacialIndifference_1312/TTF/GlacialIndifference-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'YourFont-Regular';
+    src: url('../assets/GlacialIndifference_1312/OTF/GlacialIndifference-Regular.otf') format('opentype'),
+        url('../assets/GlacialIndifference_1312/TTF/GlacialIndifference-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+/*Reset*/
+html {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/**/
+.none {
+    display: none;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+/*contactenos*/
+.contactenos-container {
+    width: 100vw;
+    background-image: linear-gradient(rgb(173, 177, 142, 0.5), #b5ba92), url("../assets/ContacUs/sc7.avif");
+    /* Reemplaza #your-color con el color que desees */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    font-weight: bold;
+    padding-top: 6rem;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.info-contacto {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-icon {
+    width: 65%;
+    height: auto;
+    background-color: rgba(75, 82, 56, .60);
+    border-radius: .5rem;
+    text-align: center;
+    padding: .75rem;
+    margin: auto;
+}
+
+.info-contacto a img {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: .3rem;
+    /* Ajusta este valor a la cantidad de espacio que desees */
+}
+
+.contact-icon a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+    /* Color por defecto para enlaces no visitados */
+}
+
+@media screen and (min-width: 712px) {
+    .contact-icon {
+        width: 50%;
+        height: auto;
+        font-size: 150%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .contact-icon {
+        width: 50%;
+        height: auto;
+        font-size: 140%;
+        margin: auto;
+    }
+    .contact-icon p:hover:not(.contact-icon){
+        /* transform: rotate(45deg); */
+        transition: transform .5s ease-in-out;
+        transform: scale(1.1) rotate(360deg); /* Ajusta el factor de escala y los grados de rotación a tu gusto */
+    }
+    .info-contacto {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: auto;
+    }
+    .info-contacto div:nth-child(3) {
+        width: 35%;
+        height: auto;
+        grid-column: span 2;
+    }
+    
+
+}

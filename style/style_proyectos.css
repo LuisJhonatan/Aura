@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap');
+
+@font-face {
+    font-family: 'YourFont-Bold';
+    src: url('../assets/GlacialIndifference_1312/OTF/GlacialIndifference-Bold.otf') format('opentype'),
+        url('../assets/GlacialIndifference_1312/TTF/GlacialIndifference-Bold.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'YourFont-Regular';
+    src: url('../assets/GlacialIndifference_1312/OTF/GlacialIndifference-Regular.otf') format('opentype'),
+        url('../assets/GlacialIndifference_1312/TTF/GlacialIndifference-Regular.ttf') format('truetype');
+    font-display: swap;
+}
+
+/*Reset*/
+html {
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Raleway', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+/**/
+.none {
+    display: none;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+/*Proyectos*/
+.contenido-proyectos {
+    position: relative;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 800;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.proyecto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 1s ease-in-out;
+}
+
+.proyecto.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.proyecto div {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.proyecto img {
+    height: inherit;
+    width: inherit;
+    object-fit: cover;
+    /* object-position: 50% 0%; */
+}
+
+.proyecto div h2 {
+    position: absolute;
+    width: 100%;
+    color: #FFF;
+    font-size: 150%;
+    top: 50%;
+    text-align: center;
+    cursor: pointer;
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Aumenta el sombreado */
+    padding: 10px; /* Espacio alrededor del texto */
+    background: transparent; /* Sin fondo */
+    border: 1px solid #FFF; /* Borde blanco */
+}
+
+.proyecto div h2:hover {
+    transform: scale(1.2);
+}
+
+.button_category {
+    position: fixed;
+    top: 15vh;
+    left: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 800;
+    box-shadow: #000;
+}
+
+.btn-proyecto {
+    width: 7rem;
+    background-color: rgba(75, 82, 56, .60);
+    color: #FFF;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: .25rem;
+    margin: .25rem;
+    font-family: "YourFont-Bold";
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5); /* Aumenta el desplazamiento, el radio de desenfoque y la opacidad */
+}
+
+.btn-proyecto.active {
+    background-color: rgb(63, 56, 82, 0.85);
+}
+
+
+/*Modal*/
+.modal {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 990;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4rem;
+
+}
+
+.modal-grid {
+    display: grid;
+    background-color: rgba(75, 82, 56);
+    border-radius: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 3fr 1fr; /* 3fr para la primera fila y 1fr para la segunda */
+    gap: .5rem;
+    width: 80%;
+    height: 80%;
+    padding: .5rem;
+}
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+    display: flex;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    grid-column: 1 / 3;
+}
+
+.slider img {
+    border-radius: .5rem;
+}
+
+.btn-close {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: rgb(255, 255, 255, 0.75);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    width: 2rem;
+    height: 2rem;
+    background-color: rgb(255, 255, 255, 0.75);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+.carousel-arrow-left {
+    left: 1rem;
+}
+
+.carousel-arrow-right {
+    right: 1rem;
+}
+
+.carousel_dot_proyecto {
+    position: absolute;
+    bottom: .25rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    user-select: none;
+    margin: .25rem;
+}
+
+.dot_proyecto {
+    width: .75rem;
+    height: .75rem;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 .25rem;
+    opacity: 0.5;
+}
+
+.dot_proyecto.active {
+    opacity: 1;
+}
+
+.text-description {
+    color: #000;
+    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #FFF;
+    border-radius: .5rem;
+}
+
+.text-description h2 {
+    font-size: 100%;
+    font-family: "YourFont-Bold";
+    padding: .25rem;
+    margin: 0;
+}
+
+.text-description p {
+    font-family: "YourFont-Regular";
+    font-size: 50%;
+    padding: .25rem;
+    margin: 0;
+}
+
+.text-description p:last-of-type {
+    font-weight: bold;
+}
+
+.text-title {
+    background-color: #FFF;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Asegura que la imagen no se desborde del contenedor */
+}
+.text-title img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (min-width: 712px) {
+    /* Estilos para tablet */
+    .text-description h2 {
+        font-size: 150%;
+    }
+
+    .text-description p {
+        font-size: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    /* Estilos para escritorio */
+    .text-description h2 {
+        font-size: 150%;
+    }
+
+    .text-description p {
+        font-size: 85%;
+    }
+}
